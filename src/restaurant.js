@@ -14,7 +14,7 @@ function createRestaurant(restaurantName) {
 
 function addMenuItem(restaurantObject, menuItem) {
   var meal = menuItem.type;
-  if (restaurantObject.menus[meal].includes(menuItem) === true) {
+  if (restaurantObject.menus[meal].includes(menuItem)) {
 
   } else {
 restaurantObject.menus[meal].push(menuItem);
@@ -26,7 +26,7 @@ function removeMenuItem(restaurantObject, mealName, type) {
 
   var menu = restaurantObject.menus[type];
   console.log(menu.length);
-  if (menu.length === 0) {
+  if (!menu.length) {
     return `Sorry, we don't sell ${mealName}, try adding a new recipe!`;
   }
 for (var i = 0; i < menu.length; i++) {
